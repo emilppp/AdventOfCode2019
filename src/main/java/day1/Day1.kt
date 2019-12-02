@@ -1,7 +1,6 @@
 package day1
 
 import java.io.File
-import java.lang.Math.floor
 
 object Day1 {
     fun calculateMass(input: Int): Int = input / 3 - 2
