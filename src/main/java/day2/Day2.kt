@@ -32,16 +32,23 @@ object Day2 {
 }
 
 fun main(args: Array<String>) {
-    val nums = //mutableListOf<Int>(1,0,0,0,99)
-        File("./src/main/java/day2/day2.input").readText().split(",").map { it.toInt() }.toMutableList()
 
+    for (i in 0..99) {
+        for (j in 0..99) {
+            val nums = //mutableListOf<Int>(1,0,0,0,99)
+                File("./src/main/java/day2/day2.input").readText().split(",").map { it.toInt() }.toMutableList()
 
-    println(nums)
-    val numbs = nums.chunked(4)
-    for (chunk in numbs) {
-        Day2.calculate(chunk, nums)
+            nums[1] = i
+            nums[2] = j
+
+            val numbs = nums.chunked(4)
+            for (chunk in numbs) {
+                Day2.calculate(chunk, nums)
+            }
+
+            if(nums[0] == 19690720) {
+                println(100*i+j)
+            }
+        }
     }
-
-    println(nums)
-
 }
